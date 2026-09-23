@@ -22,6 +22,12 @@
 
 ---
 
+## Installation
+
+```bash
+sudo curl -fsSL https://raw.githubusercontent.com/elowanaud/e5.vps/main/setup.sh | sudo bash
+```
+
 ## Présentation
 
 **e5.vps** regroupe un script de préparation de serveur Ubuntu et une configuration Fail2Ban pour SSH. `setup.sh` met à jour le système, configure Fail2Ban et UFW, installe Docker depuis son dépôt Ubuntu officiel, puis lance l'installateur de Dokploy.
@@ -42,17 +48,6 @@ e5.vps/
 - Un accès SSH sur le port standard `22`. Si SSH utilise un autre port, autorisez-le dans UFW **avant** de lancer le script : celui-ci n'ajoute que la règle `ssh/tcp`.
 
 Gardez une session SSH ouverte pendant la configuration du pare-feu. Le script modifie les paquets, les règles réseau et les services du serveur ; vérifiez son contenu avant de l'exécuter.
-
-## Installation
-
-Sur le VPS, téléchargez puis lancez le script avec Bash :
-
-```bash
-curl -fsSLo setup.sh https://raw.githubusercontent.com/elowanaud/e5.vps/main/setup.sh
-sudo bash setup.sh
-```
-
-Les commandes `apt-get` utilisent des options non interactives et UFW est activé sans confirmation. L'installation de Dokploy est déléguée à son installateur distant.
 
 ## Étapes du script
 
