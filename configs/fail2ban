@@ -1,0 +1,6 @@
+[sshd]
+enabled = true
+port = ssh
+filter = sshd
+maxretry = 3
+bantime = 3600
